@@ -13,7 +13,10 @@ Features that haven't been coded at all yet include the following:
   - The algorithm for calculating when atoms should bond is close but still makes extra bonds when it shouldn't at times. 
   
   
-Bonding algorithm
+  
+  
+BONDING ALGORITHM
+
 The bonding algorithm currently works as follows: 
    for atom1 in atoms:
     for atom2 in atoms:
