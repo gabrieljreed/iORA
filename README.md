@@ -30,4 +30,8 @@ The bonding algorithm currently works as follows:
 
 The problem with this algorithm is it will sometimes bond an atom with extra bonds it can make to an atom that already has enough bonds. What needs to happen there is to have some way to attach the number of other atoms it's currently bonded to onto the SCNNode object. I haven't found a way to elegantly do that. One of the changes I tried to make between MoleculeDemo4 and iORA was to decrease the number of different objects that were created. MoleculeDemo4 had a list of SCNNode and custom "Atom" objects that held information about the atoms. This was a bit cumbersome and made sorting the atoms really difficult. I've tried to avoid that here by using dictionaries with an SCNNode as the key and information about the atom as the value. I think you could even use the same Atom object and give it numberPossibleBonds and numberBonds attributes...
 
-My idea for this would be to sort the atoms first by the number of bonds they can make. Those atoms that have the smallest number should bond first, then move up, so that the atoms with more potential bonds don't "steal" potential bonds from other atoms. 
+My idea for this would be to sort the atoms first by the number of bonds they can make. Those atoms that have the smallest number should bond first, then move up, so that the atoms with more potential bonds don't "steal" potential bonds from other atoms.
+
+----UPDATE JUNE 2021----
+
+The plan going forward is to abandon the current bonding algorithm in favor of integrating several of OpenBabel's open source libraries into the project. This should hopefully clear up several of the issues that the current bonding algorithm has. 
